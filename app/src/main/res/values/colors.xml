@@ -7,4 +7,36 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="color_primary">#088BC9</color>
+    <color name="color_dark_primary">#1A3598</color>
+    <color name="color_light_primary">#1697E5</color>
+    <color name="color_text_primary">#0A0A0A</color>
+    <color name="color_text_secondary">#787171</color>
+    <color name="color_light_error">#FFDFD9</color>
+    <color name="color_primary_error">#E02401</color>
+
+    <color name="color_secondary">#1C4689</color>
+    <color name="color_secondary_light">#7497CE</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="chicago">#666355</color>
+    <color name="colorAlto">#D4D4D4</color>
+    <color name="gray">#8D8D8D</color>
+
+    <color name="color_primary_variant">#DE000000</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="color_on_primary">#FFFFFF</color>
+    <color name="background">#DDDDDD</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="on_background">#DE000000</color>
+    <color name="on_Surface">#DE000000</color>
+    <color name="error">#FF0000</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="mercury">#E6E6E6</color>
+    <color name="nobel">#B3B3B3</color>
+    <color name="wild_sand">#F5F5F5</color>
+    <color name="alabaster">#FAFAFA</color>
+    <color name="silver">#CCCCCC</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

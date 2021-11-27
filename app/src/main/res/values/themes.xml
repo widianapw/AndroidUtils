@@ -1,16 +1,163 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.AndroidUtils" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="fontFamily">@font/lato</item>
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_dark_primary</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/color_dark_primary</item>
         <!-- Customize your theme here. -->
+        <item name="materialButtonStyle">@style/AppTheme.PrimaryButton</item>
+        <item name="materialButtonOutlinedStyle">@style/AppTheme.OutlinedButton</item>
+
+        <item name="textInputStyle">@style/Widget.MyTextInputLayout</item>
+        <item name="autoCompleteTextViewStyle">@style/Widget.MyTextInputLayout</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.App.MaterialAlertDialog</item>
+
+        <item name="linearProgressIndicatorStyle">@style/AppTheme.LinearProgressBar</item>
+        <item name="circularProgressIndicatorStyle">@style/AppTheme.CircularProgressBar</item>
+    </style>
+    <style name="AppTheme.LinearProgressBar" parent="Widget.MaterialComponents.LinearProgressIndicator">
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <style name="AppTheme.CircularProgressBar" parent="Widget.MaterialComponents.CircularProgressIndicator">
+        <item name="android:indeterminate">true</item>
+        <item name="trackCornerRadius">16dp</item>
+    </style>
+
+    <!--    bottom sheet-->
+    <style name="AppTheme.BottomSheetDialog" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetDialogCorner</item>
+        <item name="colorPrimary">@color/color_primary</item>
+    </style>
+
+    <style name="BottomSheetDialogCorner" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="android:background">@drawable/bottom_sheet_background_elevation</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
+    </style>
+
+    <style name="MaterialAlertDialog.App" parent="MaterialAlertDialog.MaterialComponents">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+<!--    Button-->
+
+    <style name="AppTheme.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:letterSpacing" tools:ignore="NewApi">0</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">@dimen/half_app_margin</item>
+        <item name="iconTint">@color/color_primary</item>
+    </style>
+
+    <style name="AppTheme.PrimaryButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="cornerRadius">20dp</item>
+        <item name="strokeColor">@color/color_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing" tools:ignore="NewApi">0</item>
+    </style>
+
+    <style name="AppTheme.SecondaryButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="cornerRadius">20dp</item>
+        <item name="strokeColor">@color/white</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_primary</item>
+        <item name="android:letterSpacing" tools:ignore="NewApi">0</item>
+    </style>
+
+    <style name="AppTheme.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">20dp</item>
+        <item name="strokeColor">@color/color_primary</item>
+        <item name="android:letterSpacing" tools:ignore="NewApi">0</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_primary</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/color_primary</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/color_primary</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.MyTextInputLayout" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15dp</item>
+    </style>
+
+    <style name="AppTheme.AutoTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.MyApp.MyTextInputLayout</item>
+    </style>
+
+    <style name="AppTheme.UnelevatedButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="cornerRadius">16dp</item>
+        <item name="strokeColor">@color/color_primary</item>
+    </style>
+
+    <style name="Widget.MyTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.MyApp.MyTextInputLayout</item>
+        <item name="errorEnabled">true</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+        <item name="colorPrimary">@color/color_primary</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <style name="CatalogBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CatalogModalStyle</item>
+    </style>
+
+    <style name="CatalogModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottomsheet_bg</item>
+    </style>
+
+    <style name="DetailProductBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/DetailProductModalStyle</item>
+    </style>
+
+    <style name="DetailProductModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="behavior_peekHeight">600dp</item>
+        <item name="android:background">@drawable/bottomsheet_bg</item>
     </style>
 </resources>
