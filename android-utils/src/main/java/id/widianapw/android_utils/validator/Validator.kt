@@ -54,7 +54,7 @@ object RequiredValidator : ValidatorParser {
 object MaximumLengthValidator : ValidatorParser {
     override fun validate(text: String, type: ValidatorType): ValidatorResult {
         type as ValidatorType.MaximumLength
-        val isSuccess = text.length < type.max
+        val isSuccess = text.length <= type.max
         return ValidatorResult(isSuccess, "Panjang maksimum ${type.max} karakter")
     }
 }
@@ -62,7 +62,7 @@ object MaximumLengthValidator : ValidatorParser {
 object MinimumLengthValidator : ValidatorParser {
     override fun validate(text: String, type: ValidatorType): ValidatorResult {
         type as ValidatorType.MinimumLength
-        val isSuccess = text.length > type.min
+        val isSuccess = text.length >= type.min
         return ValidatorResult(isSuccess, "Panjang minimum ${type.min} karakter")
     }
 }
@@ -84,7 +84,7 @@ object EmailValidator : ValidatorParser {
 object MaximumValueValidator : ValidatorParser {
     override fun validate(text: String, type: ValidatorType): ValidatorResult {
         type as ValidatorType.MaximumValue
-        val isSuccess = text.toInt() < type.max
+        val isSuccess = text.toInt() <= type.max
         val message = "Nilai maksimum adalah ${type.max}"
         return ValidatorResult(isSuccess, message)
     }
@@ -93,7 +93,7 @@ object MaximumValueValidator : ValidatorParser {
 object MinimumValueValidator : ValidatorParser {
     override fun validate(text: String, type: ValidatorType): ValidatorResult {
         type as ValidatorType.MinimumValue
-        val isSuccess = text.toInt() > type.min
+        val isSuccess = text.toInt() >= type.min
         return ValidatorResult(isSuccess, "Nilai minimum adalah ${type.min}")
     }
 }
